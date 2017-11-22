@@ -15,6 +15,8 @@ import os
 import csv
 import numpy as np
 from numpy.random import RandomState
+
+
 prng = RandomState(1234567890)
 
 BASE_DIR = '.'
@@ -135,9 +137,9 @@ def tokenize_data(X_raw, Y_raw):
 def load_data_set():
     X = []
     Y = []
-    with open(TRAIN_DATA_FILE, "rb") as f:
+    with open(TRAIN_DATA_FILE) as f:
         reader = csv.reader(f, delimiter=",")
-        for i, line in enumerate(reader):
+        for line in reader:
             is_positive = line[1]=="1"
             text = line[3]
             X.append(text)
