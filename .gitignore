@@ -159,3 +159,4 @@ fabric.properties
 glove
 *.zip
 *.h5
+.idea
